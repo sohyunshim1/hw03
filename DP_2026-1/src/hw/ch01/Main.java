@@ -5,7 +5,8 @@ import java.util.Iterator;
 public class Main {
     public static void main(String[] args) {
         BookShelf bookShelf = new BookShelf(10);
-
+        //Step 4: Main 클래스 수정
+        //주어진 테이블의 책 데이터를 갖도록 한다
         bookShelf.appendBook(new Book("클린코드", "기술", 2008, 30000));
         bookShelf.appendBook(new Book("해리포터와 마법사의 돌", "소설", 1997, 15000));
         bookShelf.appendBook(new Book("사피엔스", "역사", 2011, 18000));
@@ -26,7 +27,10 @@ public class Main {
             System.out.println(book.getName());
         }
         */
-       
+       //[4-2] 장르 필터 Iterator 를 테스트
+        //장르 필터 Iterator 객체를 이용하여 ‘소설’ 장르에 해당하는 책들을 차례대로 꺼내
+        //각 항목을 보기 좋게 출력한다
+        System.out.println("===20230831 심소현 ===\n");
         System.out.println("=== 소설 책 ===");
         Iterator<Book> it1 = bookShelf.iteratorByGenre("소설");
         while (it1.hasNext()) {
@@ -43,6 +47,9 @@ public class Main {
         System.out.println();
 
 
+        //[4-3] 출판연도 역순 Iterator 를 테스트
+        //장르 필터 Iterator 객체를 이용하여 최신 책부터 차례대로 꺼내 와서 
+        // 각 항목을 보기 좋게 출력한다
         System.out.println("=== 최신순 책 목록 ===");
 
         Iterator<Book> it2 = bookShelf.iteratorByYear();

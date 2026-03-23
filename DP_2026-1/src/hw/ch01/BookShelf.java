@@ -28,9 +28,11 @@ public class BookShelf implements Iterable<Book> {
         return new BookShelfIterator(this);
     }
     
-    // 추가 구현 
 
-    
+    // Step 3: BookShelf 클래스 수정
+    //Step 2에서 구현한 2 종류의 iterator를 얻어 오는 메소드 
+    // iteratorByGenre(String), iteratorByYear( ) 를 구현한다.
+
     public Iterator<Book> iteratorByGenre(String genre) {
     return new GenreIterator(this, genre);
     }
